@@ -1,0 +1,15 @@
+﻿@model Data.Reservation
+@{
+    ViewData["Title"] = "DeleteReservation";
+}
+
+<h2>Delete Reservation</h2>
+
+<form asp-action="DeleteReservationConfirm" asp-route-id="@Model.Id" method="post">
+    <div>@Model.Name</div>
+    <div>@Model.Start</div>
+    <div>@Model.End</div>
+    <div>@Model.Details</div>
+    <button type="submit" class="btn">Confirm Delete</button>
+</form>
+

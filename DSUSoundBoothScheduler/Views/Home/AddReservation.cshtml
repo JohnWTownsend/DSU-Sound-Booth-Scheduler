@@ -1,0 +1,39 @@
+﻿@model DSUSoundBoothScheduler.ViewModels.ReservationViewModel
+@{
+    ViewData["Title"] = "AddReservation";
+    Layout = "/Views/Shared/_FormLayout.cshtml";
+}
+<h2>Add Reservation</h2>
+
+<form class="dsu-form" method="post" asp-controller="Home" asp-action="AddReservation">
+
+    <div class="dsu-form-item">
+        <label asp-for="ReserverName"></label>
+        <input asp-for="ReserverName" disabled />
+    </div>
+    <div class="dsu-form-item">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" /><br />
+    </div>
+
+    <div class="dsu-form-item">
+        <label asp-for="Start"></label>
+        <input asp-for="Start" class="fp-date" />
+    </div>
+    <div class="dsu-form-item">
+        <label asp-for="End"></label>
+        <input asp-for="End" class="fp-date" />
+    </div>
+    <div class="dsu-form-item">
+        <label asp-for="Details"></label>
+        <input asp-for="Details" />
+    </div>
+    <div class="dsu-form-item">
+        <label asp-for="Color"></label>
+        <input class="jscolor" asp-for="Color" />
+    </div>
+
+    <button type="submit" class="btn">Add</button>
+</form>
+<script src="~/lib/jscolor/jscolor.js"></script>
+

@@ -1,0 +1,162 @@
+﻿@model WeeklySchedule
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+@{
+    ViewData["Title"] = "Home Page";
+    Reservation r1;
+}
+
+<link href="~/css/Index/index.css" rel="stylesheet" />
+<link href="~/css/Index/index-mobile.css" rel="stylesheet" />
+
+<div class="overlay"></div>
+<div id="schedule-controls">
+    <a id="previousWeekButton" asp-action="PreviousWeekIndex" asp-route-current="@Model.WeekdaySchedule.First().Key.Date"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+    <a id="nextWeekButton" asp-action="NextWeekIndex" asp-route-current="@Model.WeekdaySchedule.First().Key.Date"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+</div>
+
+@if ((await AuthorizationService.AuthorizeAsync(User, "IsCertified")).Succeeded)
+{
+    <a asp-action="AddReservation" class="btn addReservationButton"><span class="glyphicon glyphicon-plus"></span></a>
+}
+
+<div id="schedule-wrapper">
+    <div id="main-schedule-hour-wrapper" class="schedule-hour-wrapper">
+        <div class="schedule-hour">12AM</div>
+        <div class="schedule-hour">1AM</div>
+        <div class="schedule-hour">2AM</div>
+        <div class="schedule-hour">3AM</div>
+        <div class="schedule-hour">4AM</div>
+        <div class="schedule-hour">5AM</div>
+        <div class="schedule-hour">6AM</div>
+        <div class="schedule-hour">7AM</div>
+        <div class="schedule-hour">8AM</div>
+        <div class="schedule-hour">9AM</div>
+        <div class="schedule-hour">10AM</div>
+        <div class="schedule-hour">11AM</div>
+        <div class="schedule-hour">12PM</div>
+        <div class="schedule-hour">1PM</div>
+        <div class="schedule-hour">2PM</div>
+        <div class="schedule-hour">3PM</div>
+        <div class="schedule-hour">4PM</div>
+        <div class="schedule-hour">5PM</div>
+        <div class="schedule-hour">6PM</div>
+        <div class="schedule-hour">7PM</div>
+        <div class="schedule-hour">8PM</div>
+        <div class="schedule-hour">9PM</div>
+        <div class="schedule-hour">10PM</div>
+        <div class="schedule-hour">11PM</div>
+    </div>
+    <div id="schedule">
+        @foreach (var weekDaySchedule in Model.WeekdaySchedule)
+        {
+            <div class="weekDay" id="dayofweek-@weekDaySchedule.Key.DayOfWeek">
+                <h4>
+                    @weekDaySchedule.Key.DayOfWeek.ToString().Substring(0, 3) <br />
+                    @weekDaySchedule.Key.Month/@weekDaySchedule.Key.Day
+                </h4>
+                <div class="reservations">
+                    @foreach (Reservation reservation in weekDaySchedule.Value)
+                    {
+                        r1 = reservation;
+                        if (r1.ReservingUser.Id == ViewBag.UserId)
+                        {
+                            <a asp-action="EditReservation" asp-route-reservationId=@reservation.Id>
+                                <div class="reservation">
+                                    <p class="reservation-name">@reservation.Name</p>
+                                    <div class="reservation-time">@reservation.Start.ToString("%h:mm")-@reservation.End.ToString("%h:mmtt")</div>
+                                    <div class="reservation-color" hidden>@reservation.Color</div>
+                                    <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            <a>
+                                <div class="reservation">
+                                    <p class="reservation-name">@reservation.Name</p>
+                                    <div class="reservation-time">@reservation.Start.ToString("%h:mm")-@reservation.End.ToString("%h:mmtt")</div>
+                                    <div class="reservation-color" hidden>@reservation.Color</div>
+                                    <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                </div>
+                            </a>
+                        }
+                    }
+                </div>
+                <div class="modal" data-visible="0" style="display:none;">
+                    <h4>
+                        @weekDaySchedule.Key.DayOfWeek.ToString() <br />
+                        @weekDaySchedule.Key.ToShortDateString()
+                    </h4>
+                    <div class="modal-schedule">
+                        <div class="modal-schedule-hour-wrapper schedule-hour-wrapper">
+                            <div class="schedule-hour">12AM</div>
+                            <div class="schedule-hour">1AM</div>
+                            <div class="schedule-hour">2AM</div>
+                            <div class="schedule-hour">3AM</div>
+                            <div class="schedule-hour">4AM</div>
+                            <div class="schedule-hour">5AM</div>
+                            <div class="schedule-hour">6AM</div>
+                            <div class="schedule-hour">7AM</div>
+                            <div class="schedule-hour">8AM</div>
+                            <div class="schedule-hour">9AM</div>
+                            <div class="schedule-hour">10AM</div>
+                            <div class="schedule-hour">11AM</div>
+                            <div class="schedule-hour">12PM</div>
+                            <div class="schedule-hour">1PM</div>
+                            <div class="schedule-hour">2PM</div>
+                            <div class="schedule-hour">3PM</div>
+                            <div class="schedule-hour">4PM</div>
+                            <div class="schedule-hour">5PM</div>
+                            <div class="schedule-hour">6PM</div>
+                            <div class="schedule-hour">7PM</div>
+                            <div class="schedule-hour">8PM</div>
+                            <div class="schedule-hour">9PM</div>
+                            <div class="schedule-hour">10PM</div>
+                            <div class="schedule-hour">11PM</div>
+                        </div>
+                        <div class="reservations">
+                            @foreach (var reservation in weekDaySchedule.Value)
+                            {
+                                r1 = reservation;
+                                if (r1.ReservingUser.Id == ViewBag.UserId)
+                                {
+                                    <a asp-action="EditReservation" asp-route-reservationId=@reservation.Id>
+                                        <div class="reservation">
+                                            <p class="reservation-name">@reservation.Name</p>
+                                            <div class="reservation-details">@reservation.Details</div>
+                                            <div class="reservation-time">@reservation.Start.ToShortTimeString() - @reservation.End.ToShortTimeString()</div>
+                                            <div class="reservation-color" hidden>@reservation.Color</div>
+                                            <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                        </div>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a>
+                                        <div class="reservation">
+                                            <p class="reservation-name">@reservation.Name</p>
+                                            <div class="reservation-details">@reservation.Details</div>
+                                            <div class="reservation-time">@reservation.Start.ToShortTimeString() - @reservation.End.ToShortTimeString()</div>
+                                            <div class="reservation-color" hidden>@reservation.Color</div>
+                                            <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                        </div>
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                @if ((await AuthorizationService.AuthorizeAsync(User, "IsCertified")).Succeeded)
+                {
+                    <a asp-action="AddReservationForWeekday" asp-route-ticks=@weekDaySchedule.Key.Ticks class="btn addReservationButton"><span class="glyphicon glyphicon-plus"></span></a>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/js/index.js"></script>
+}

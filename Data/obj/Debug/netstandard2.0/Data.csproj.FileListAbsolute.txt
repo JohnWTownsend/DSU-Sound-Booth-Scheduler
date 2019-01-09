@@ -1,0 +1,12 @@
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\bin\Debug\netstandard2.0\Data.deps.json
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\bin\Debug\netstandard2.0\Data.dll
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\bin\Debug\netstandard2.0\Data.pdb
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\obj\Debug\netstandard2.0\Data.AssemblyInfoInputs.cache
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\obj\Debug\netstandard2.0\Data.AssemblyInfo.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\obj\Debug\netstandard2.0\Data.csproj.CopyComplete
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\obj\Debug\netstandard2.0\Data.dll
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\obj\Debug\netstandard2.0\Data.pdb
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\Data\obj\Debug\netstandard2.0\Data.csprojAssemblyReference.cache

@@ -1,0 +1,46 @@
+﻿@model DSUSoundBoothScheduler.ViewModels.ReservationViewModel
+@{
+    ViewData["Title"] = "EditReservation";
+    Layout = "/Views/Shared/_FormLayout.cshtml";
+}
+
+<h2>Edit Reservation</h2>
+<form class="dsu-form" asp-action="EditReservation" method="post">
+    <input asp-for="@Model.Id" style="display:none" />
+    <input asp-for="@Model.ReservingUserId" style="display:none" />
+    <input asp-for="@Model.ReservingUser" style="display:none" />
+
+    <div class="dsu-form-item">
+        <label asp-for="@Model.ReserverName"></label>
+        <input asp-for="@Model.ReserverName" disabled />
+    </div>
+
+    <div class="dsu-form-item">
+        <label asp-for="@Model.Name"></label>
+        <input asp-for="@Model.Name" />
+    </div>
+
+    <div class="dsu-form-item">
+        <label asp-for="@Model.Start"></label>
+        <input name="Start" class="fp-date" value="@Model.Start.ToString("O")" />
+    </div>
+    <div class="dsu-form-item">
+        <label asp-for="@Model.End"></label>
+        <input name="End" type="text" class="fp-date" value="@Model.End.ToString("O")" />
+    </div>
+    <div class="dsu-form-item">
+        <label asp-for="@Model.Details"></label>
+        <input asp-for="@Model.Details" />
+    </div>
+
+    <div class="dsu-form-item">
+        <label asp-for="Color"></label>
+        <input class="jscolor" asp-for="Color" />
+    </div>
+
+    <button type="submit" class="btn">Save</button>
+    <a asp-action="DeleteReservation" asp-route-reservationId="@Model.Id" class="btn">Delete</a>
+</form>
+
+<script src="~/lib/jscolor/jscolor.js"></script>
+

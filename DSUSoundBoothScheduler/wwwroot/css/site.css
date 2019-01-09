@@ -1,0 +1,50 @@
+﻿#main-nav {
+    background: rgb(200, 200, 200);
+    border: none;
+    box-shadow: rgb(180, 180, 180) 0px 5px 5px;
+    color: rgb(30,30,30) !important;
+}
+
+    #main-nav .navbar-brand, #main-nav .navbar-items > li > a {
+        color: black !important;
+    }
+
+        #main-nav .navbar-brand:hover {
+            color: rgb(30,30,30) !important;
+        }
+
+        #main-nav .navbar-items > li > a:hover {
+            color: rgb(30,30,30) !important;
+        }
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: rgb(240, 240, 240);
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+#qrCode {
+    margin: 15px;
+}
+
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

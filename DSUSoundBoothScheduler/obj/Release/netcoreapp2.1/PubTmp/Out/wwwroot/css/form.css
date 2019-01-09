@@ -1,0 +1,33 @@
+﻿input[type="text"]{
+    width:40%;
+    display:inline;
+}
+
+h2{
+    text-align: center;
+}
+
+.dsu-form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.dsu-form-item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    margin: 5px;
+}
+    .dsu-form-item *{
+        margin: 5px;
+    }
+    .dsu-form-item input{
+        flex: 3;
+    }
+    .dsu-form-item label{
+        flex: 1;
+        text-align: center;
+    }
+
