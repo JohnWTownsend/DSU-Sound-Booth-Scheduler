@@ -14,10 +14,9 @@
     <a id="previousWeekButton" asp-action="PreviousWeekIndex" asp-route-current="@Model.WeekdaySchedule.First().Key.Date"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
     <a id="nextWeekButton" asp-action="NextWeekIndex" asp-route-current="@Model.WeekdaySchedule.First().Key.Date"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
 </div>
-
-@if ((await AuthorizationService.AuthorizeAsync(User, "IsCertified")).Succeeded)
+@if (User.HasClaim("IsCertified", "True"))
 {
-    <a asp-action="AddReservation" class="btn addReservationButton"><span class="glyphicon glyphicon-plus"></span></a>
+    <input type="button" asp-action="AddReservation" value="Add Reservation" class="btn addReservationButton" onclick="location.href='@Url.Action("AddReservation", "Home")'">
 }
 
 <div id="schedule-wrapper">
@@ -59,14 +58,17 @@
                     @foreach (Reservation reservation in weekDaySchedule.Value)
                     {
                         r1 = reservation;
-                        if (r1.ReservingUser.Id == ViewBag.UserId)
+                        if (r1.ReservingUser.Id == ViewBag.UserId || User.HasClaim("IsAdmin","True"))
                         {
                             <a asp-action="EditReservation" asp-route-reservationId=@reservation.Id>
                                 <div class="reservation">
-                                    <p class="reservation-name">@reservation.Name</p>
-                                    <div class="reservation-time">@reservation.Start.ToString("%h:mm")-@reservation.End.ToString("%h:mmtt")</div>
-                                    <div class="reservation-color" hidden>@reservation.Color</div>
-                                    <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                    <p class="reservation-sidebar">@reservation.ReservingUser.FirstName[0]. @reservation.ReservingUser.LastName</p>
+                                    <div class="reservation-info">
+                                        <p class="reservation-name">@reservation.Name</p>
+                                        <div class="reservation-time">@reservation.Start.ToString("%h:mm")-@reservation.End.ToString("%h:mmtt")</div>
+                                        <div class="reservation-color" hidden>@reservation.Color</div>
+                                        <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                    </div>
                                 </div>
                             </a>
                         }
@@ -74,10 +76,13 @@
                         {
                             <a>
                                 <div class="reservation">
-                                    <p class="reservation-name">@reservation.Name</p>
-                                    <div class="reservation-time">@reservation.Start.ToString("%h:mm")-@reservation.End.ToString("%h:mmtt")</div>
-                                    <div class="reservation-color" hidden>@reservation.Color</div>
-                                    <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                    <p class="reservation-sidebar">@reservation.ReservingUser.FirstName[0]. @reservation.ReservingUser.LastName</p>
+                                    <div class="reservation-info">
+                                        <p class="reservation-name">@reservation.Name</p>
+                                        <div class="reservation-time">@reservation.Start.ToString("%h:mm")-@reservation.End.ToString("%h:mmtt")</div>
+                                        <div class="reservation-color" hidden>@reservation.Color</div>
+                                        <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                    </div>
                                 </div>
                             </a>
                         }
@@ -123,11 +128,14 @@
                                 {
                                     <a asp-action="EditReservation" asp-route-reservationId=@reservation.Id>
                                         <div class="reservation">
-                                            <p class="reservation-name">@reservation.Name</p>
-                                            <div class="reservation-details">@reservation.Details</div>
-                                            <div class="reservation-time">@reservation.Start.ToShortTimeString() - @reservation.End.ToShortTimeString()</div>
-                                            <div class="reservation-color" hidden>@reservation.Color</div>
-                                            <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                            <p class="reservation-sidebar">@reservation.ReservingUser.FirstName[0]. @reservation.ReservingUser.LastName</p>
+                                            <div class="reservation-info">
+                                                <p class="reservation-name">@reservation.Name</p>
+                                                <div class="reservation-details">@reservation.Details</div>
+                                                <div class="reservation-time">@reservation.Start.ToShortTimeString() - @reservation.End.ToShortTimeString()</div>
+                                                <div class="reservation-color" hidden>@reservation.Color</div>
+                                                <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                            </div>
                                         </div>
                                     </a>
                                 }
@@ -135,11 +143,14 @@
                                 {
                                     <a>
                                         <div class="reservation">
-                                            <p class="reservation-name">@reservation.Name</p>
-                                            <div class="reservation-details">@reservation.Details</div>
-                                            <div class="reservation-time">@reservation.Start.ToShortTimeString() - @reservation.End.ToShortTimeString()</div>
-                                            <div class="reservation-color" hidden>@reservation.Color</div>
-                                            <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                            <p class="reservation-sidebar">@reservation.ReservingUser.FirstName[0]. @reservation.ReservingUser.LastName</p>
+                                            <div class="reservation-info">
+                                                <p class="reservation-name">@reservation.Name</p>
+                                                <div class="reservation-details">@reservation.Details</div>
+                                                <div class="reservation-time">@reservation.Start.ToShortTimeString() - @reservation.End.ToShortTimeString()</div>
+                                                <div class="reservation-color" hidden>@reservation.Color</div>
+                                                <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
+                                            </div>
                                         </div>
                                     </a>
                                 }
@@ -148,7 +159,7 @@
                     </div>
 
                 </div>
-                @if ((await AuthorizationService.AuthorizeAsync(User, "IsCertified")).Succeeded)
+                @if (User.HasClaim("IsCertified", "True"))
                 {
                     <a asp-action="AddReservationForWeekday" asp-route-ticks=@weekDaySchedule.Key.Ticks class="btn addReservationButton"><span class="glyphicon glyphicon-plus"></span></a>
                 }

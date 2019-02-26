@@ -19,9 +19,6 @@ namespace DSUSoundBoothScheduler.Areas.Identity
                 services.AddDbContext<DSUSoundBoothSchedulerContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("DSUSoundBoothSchedulerContextConnection")));
-
-                services.AddDefaultIdentity<DSUSoundBoothSchedulerUser>()
-                    .AddEntityFrameworkStores<DSUSoundBoothSchedulerContext>();
             });
         }
     }

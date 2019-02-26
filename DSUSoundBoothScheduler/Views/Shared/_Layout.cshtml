@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DSUSoundBoothScheduler</title>
+    <link href="~/css/Layout/loadingScreen.css" rel="stylesheet" />
+    <script src="~/js/Layout/loadingScreen.js"></script>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -32,9 +34,6 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-items">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
@@ -42,7 +41,7 @@
     </nav>
 
     <partial name="_CookieConsentPartial" />
-
+    <div id="loadingScreen"><img src="~/images/loader.gif" /></div>
     <div class="body-content">
         @RenderBody()
     </div>
@@ -70,7 +69,6 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     </environment>
-
     @RenderSection("Scripts", required: false)
 </body>
 </html>

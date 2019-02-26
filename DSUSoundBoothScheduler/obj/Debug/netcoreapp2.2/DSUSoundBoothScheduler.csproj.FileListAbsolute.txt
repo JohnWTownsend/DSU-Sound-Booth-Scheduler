@@ -18,6 +18,9 @@ C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DS
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\DSUSoundBoothScheduler.TagHelpers.input.cache
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\DSUSoundBoothScheduler.TagHelpers.output.cache
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\DSUSoundBoothScheduler.RazorCoreGenerate.cache
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\ForgotPassword.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Logout.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\Index.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
@@ -25,9 +28,7 @@ C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DS
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
-C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Views\Home\About.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Views\Home\AddReservation.g.cshtml.cs
-C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Views\Home\Contact.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Views\Home\DeleteReservation.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Views\Home\EditReservation.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs

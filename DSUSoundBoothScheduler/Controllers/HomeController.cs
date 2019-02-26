@@ -10,6 +10,7 @@ using Data;
 using DSUSoundBoothScheduler.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Services.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DSUSoundBoothScheduler.Controllers
 {
@@ -44,8 +45,7 @@ namespace DSUSoundBoothScheduler.Controllers
             {
                 reservations = _reservationService.GetReservations((DateTime)weekStart, (DateTime)weekEnd);
             }
-
-
+            var foo = User.HasClaim("IsAdmin", "True");
             WeeklySchedule weeklySchedule = new WeeklySchedule();
             weeklySchedule.WeekdaySchedule = new Dictionary<DateTime, List<Reservation>>();
 
@@ -61,7 +61,6 @@ namespace DSUSoundBoothScheduler.Controllers
                 weeklySchedule.WeekdaySchedule.Add(date, _scheduleHelper.GetWeekdayReservations(reservations, (int)date.DayOfWeek));
             }
             var x = weeklySchedule.WeekdaySchedule.First().Key.Date;
-            var foo = weeklySchedule.WeekdaySchedule.Where(f => f.Key.DayOfWeek == DayOfWeek.Monday).First().Value.First().ReservingUser;
 
             return View(weeklySchedule);
         }
@@ -81,6 +80,7 @@ namespace DSUSoundBoothScheduler.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult> AddReservation()
         {
             ReservationViewModel reservationViewModel = new ReservationViewModel();
@@ -135,7 +135,7 @@ namespace DSUSoundBoothScheduler.Controllers
                 Id = reservation.Id,
                 ReservingUser = reservation.ReservingUser,
                 ReservingUserId = reservation.ReservingUserId,
-                ReserverName = reserver.FirstName + reserver.LastName,
+                ReserverName = reserver.FirstName + " " + reserver.LastName,
                 Name = reservation.Name,
                 Start = reservation.Start,
                 End = reservation.End,
@@ -176,20 +176,6 @@ namespace DSUSoundBoothScheduler.Controllers
         {
             _reservationService.DeleteReservation(id);
             return RedirectToAction("Index");
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
         }
 
         public IActionResult Privacy()

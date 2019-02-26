@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".reservation-color").forEach((HTMLDivElement) => {
-        HTMLDivElement.parentElement.setAttribute("style", `background:${HTMLDivElement.innerText}`);
+        HTMLDivElement.parentElement.parentElement.setAttribute("style", `background:${HTMLDivElement.innerText}; `);
     });
 
     window.addEventListener("resize", () => { setHeaderPositions(); showHideTimes(); });
@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function showHideTimes() {
     let timeDiv = document.querySelector("#main-schedule-hour-wrapper");
-    console.log(timeDiv);
-    if (window.innerWidth > 600) {
+    if (window.innerWidth > 800) {
         timeDiv.setAttribute("style", "display:grid;");
     }
     else {
@@ -27,7 +26,7 @@ function showHideTimes() {
 
 function setHeaderPositions() {
     let headers = document.querySelectorAll(".weekDay > h4");
-    if (window.innerWidth > 600) {
+    if (window.innerWidth > 800) {
         let schedule = document.querySelector("#schedule");
         let schedulePosition = schedule.getBoundingClientRect();
         let i = 0;
@@ -95,21 +94,18 @@ function setReservationPositions() {
         let dateContent = HTMLDivElement.innerText.split(" ");
         let startHour = parseInt(dateContent[0]);
         let endHour = parseInt(dateContent[1]);
-        let gridItem = HTMLDivElement.parentElement.parentElement;
-        gridItem.setAttribute("style", `grid-area: ${startHour + 1}; grid-row: ${startHour + 1}/${endHour + 1};`);
+        let gridItem = HTMLDivElement.parentElement.parentElement.parentElement;
+        gridItem.setAttribute("style", gridItem.getAttribute("style") + `grid-area: ${startHour + 1}; grid-row: ${startHour + 1}/${endHour + 1};`);
     });
 }
 
 
 
 function displayOverlay() {
-    console.log("Display Overlay");
     let overlay = document.querySelector(".overlay");
     overlay.setAttribute("style", "display:block;");
 }
 function removeOverlay() {
-    console.log("Remove Overlay");
-
     let overlay = document.querySelector(".overlay");
     overlay.setAttribute("style", "display:none;");
 }

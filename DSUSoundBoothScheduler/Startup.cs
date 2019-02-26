@@ -36,10 +36,10 @@ namespace DSUSoundBoothScheduler
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("IsCertified", policy => policy.RequireClaim("IsCertified", "True"));
-            });
+            services.AddIdentity<DSUSoundBoothSchedulerUser, IdentityRole>()
+                .AddEntityFrameworkStores<DSUSoundBoothSchedulerContext>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders();
 
             services.AddDbContext<DSUSoundBoothSchedulerContext>(options =>
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Initial Catalog=DSUSoundBoothScheduler;Trusted_Connection=True;Integrated Security=SSPI;"));
@@ -47,6 +47,7 @@ namespace DSUSoundBoothScheduler
             services.AddScoped<IReservationService, ReservationService>();
             services.AddScoped<IScheduleHelper, ScheduleHelper>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserClaimsPrincipalFactory<DSUSoundBoothSchedulerUser>, AppClaimsPrincipalFactory>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

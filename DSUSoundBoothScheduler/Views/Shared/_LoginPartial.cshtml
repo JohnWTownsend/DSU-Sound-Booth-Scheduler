@@ -6,6 +6,8 @@
     var user = await UserManager.GetUserAsync(User);
 }
 
+<link href="~/css/LoginNav/login-partial.css" rel="stylesheet" />
+
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right">

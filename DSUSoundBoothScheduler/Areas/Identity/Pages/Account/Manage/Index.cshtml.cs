@@ -55,7 +55,6 @@ namespace DSUSoundBoothScheduler.Areas.Identity.Pages.Account.Manage
             public string Email { get; set; }
 
             [Required]
-            [EmailAddress]
             public string StudentID { get; set; }
 
             [Phone]

@@ -81,7 +81,7 @@ namespace DSUSoundBoothScheduler.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new DSUSoundBoothSchedulerUser { FirstName = Input.FirstName, LastName = Input.LastName,StudentID = Input.StudentID, UserName = Input.Email, Email = Input.Email, IsAdmin = false, IsCertified = false };
+                var user = new DSUSoundBoothSchedulerUser { FirstName = Input.FirstName, LastName = Input.LastName, StudentID = Input.StudentID, UserName = Input.Email, Email = Input.Email, IsAdmin = false, IsCertified = false };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

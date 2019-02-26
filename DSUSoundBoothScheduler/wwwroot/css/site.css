@@ -1,32 +1,32 @@
 ﻿#main-nav {
     background: rgb(200, 200, 200);
     border: none;
-    box-shadow: rgb(180, 180, 180) 0px 5px 5px;
-    color: rgb(30,30,30) !important;
+    box-shadow: rgb(130, 130, 130) 0px 5px 5px;
 }
 
     #main-nav .navbar-brand, #main-nav .navbar-items > li > a {
-        color: black !important;
+        color: rgb(20,20,20) !important;
     }
 
         #main-nav .navbar-brand:hover {
-            color: rgb(30,30,30) !important;
+            color: rgb(100,100,100) !important;
         }
 
         #main-nav .navbar-items > li > a:hover {
-            color: rgb(30,30,30) !important;
+            color: rgb(100,100,100) !important;
         }
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: rgb(240, 240, 240);
+    background: rgb(230, 230, 230);
 }
 
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 1% 10%;
+    margin: 0px;
+
 }
 
 .carousel-caption p {
