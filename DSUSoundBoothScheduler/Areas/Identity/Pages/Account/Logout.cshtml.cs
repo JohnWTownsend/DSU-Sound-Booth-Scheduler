@@ -18,6 +18,7 @@ namespace DSUSoundBoothScheduler.Areas.Identity.Pages.Account
         private readonly ILogger<LogoutModel> _logger;
 
         public LogoutModel(SignInManager<DSUSoundBoothSchedulerUser> signInManager, ILogger<LogoutModel> logger)
+        {
             _signInManager = signInManager;
             _logger = logger;
         }

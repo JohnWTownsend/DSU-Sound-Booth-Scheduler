@@ -42,6 +42,10 @@ body {
     margin: 15px;
 }
 
+h2{
+    text-align: center;
+}
+
 @media screen and (max-width: 767px) {
     /* Hide captions */
     .carousel-caption {

@@ -47,3 +47,10 @@ C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DS
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\DSUSoundBoothScheduler.csproj.CopyComplete
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\DSUSoundBoothScheduler.dll
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\DSUSoundBoothScheduler.pdb
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\DownloadPersonalData.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\_Layout.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.g.cshtml.cs
