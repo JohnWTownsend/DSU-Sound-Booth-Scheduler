@@ -14,38 +14,9 @@
     <a id="previousWeekButton" asp-action="PreviousWeekIndex" asp-route-current="@Model.WeekdaySchedule.First().Key.Date"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
     <a id="nextWeekButton" asp-action="NextWeekIndex" asp-route-current="@Model.WeekdaySchedule.First().Key.Date"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
 </div>
-@if (User.HasClaim("IsCertified", "True"))
-{
-    <input type="button" asp-action="AddReservation" value="Add Reservation" class="btn addReservationButton" onclick="location.href='@Url.Action("AddReservation", "Home")'">
-}
 
 <div id="schedule-wrapper">
-    <div id="main-schedule-hour-wrapper" class="schedule-hour-wrapper">
-        <div class="schedule-hour">12AM</div>
-        <div class="schedule-hour">1AM</div>
-        <div class="schedule-hour">2AM</div>
-        <div class="schedule-hour">3AM</div>
-        <div class="schedule-hour">4AM</div>
-        <div class="schedule-hour">5AM</div>
-        <div class="schedule-hour">6AM</div>
-        <div class="schedule-hour">7AM</div>
-        <div class="schedule-hour">8AM</div>
-        <div class="schedule-hour">9AM</div>
-        <div class="schedule-hour">10AM</div>
-        <div class="schedule-hour">11AM</div>
-        <div class="schedule-hour">12PM</div>
-        <div class="schedule-hour">1PM</div>
-        <div class="schedule-hour">2PM</div>
-        <div class="schedule-hour">3PM</div>
-        <div class="schedule-hour">4PM</div>
-        <div class="schedule-hour">5PM</div>
-        <div class="schedule-hour">6PM</div>
-        <div class="schedule-hour">7PM</div>
-        <div class="schedule-hour">8PM</div>
-        <div class="schedule-hour">9PM</div>
-        <div class="schedule-hour">10PM</div>
-        <div class="schedule-hour">11PM</div>
-    </div>
+
     <div id="schedule">
         @foreach (var weekDaySchedule in Model.WeekdaySchedule)
         {
@@ -55,6 +26,7 @@
                     @weekDaySchedule.Key.Month/@weekDaySchedule.Key.Day
                 </h4>
                 <div class="reservations">
+                    <partial name="_IndexHourGridArea.cshtml" model="weekDaySchedule.Key"/>
                     @foreach (Reservation reservation in weekDaySchedule.Value)
                     {
                         r1 = reservation;
@@ -159,10 +131,7 @@
                     </div>
 
                 </div>
-                @if (User.HasClaim("IsCertified", "True"))
-                {
-                    <a asp-action="AddReservationForWeekday" asp-route-ticks=@weekDaySchedule.Key.Ticks class="btn addReservationButton"><span class="glyphicon glyphicon-plus"></span></a>
-                }
+
             </div>
         }
     </div>

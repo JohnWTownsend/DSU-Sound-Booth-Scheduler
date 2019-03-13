@@ -54,3 +54,4 @@ C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DS
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.g.cshtml.cs
 C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.g.cshtml.cs
+C:\Users\johnj\Documents\COLLEGE\Fall2018\Tech Fellows\DSUSoundProductionHome\DSUSoundBoothScheduler\DSUSoundBoothScheduler\obj\Debug\netcoreapp2.2\Razor\Views\Home\_IndexHourGridArea.g.cshtml.cs

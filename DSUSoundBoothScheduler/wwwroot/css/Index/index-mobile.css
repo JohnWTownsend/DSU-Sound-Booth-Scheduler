@@ -88,4 +88,7 @@
         top: auto;
         left: auto;
     }
+    .reservation-cell {
+        display: none;
+    }
 }

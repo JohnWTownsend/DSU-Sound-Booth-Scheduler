@@ -3,13 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
         HTMLDivElement.parentElement.parentElement.setAttribute("style", `background:${HTMLDivElement.innerText}; `);
     });
 
-    window.addEventListener("resize", () => { setHeaderPositions(); showHideTimes(); });
+    window.addEventListener("resize", () => { setHeaderPositions(); });
     window.addEventListener("click", (event) => {
         conditionallyCloseAllModals(event);
     }, true );
 
     setHeaderPositions();
-    showHideTimes();
     addModalPopupsToHeaders();
     setReservationPositions();
 });
@@ -88,14 +87,24 @@ function closeAllModals() {
     removeOverlay();
 }
 
+function removeTimePlaceHolders(grid, startHour, endHour) {
+    for (let i = startHour; i < endHour; i++) {
+        let hourPlaceHolder = grid.querySelector(`#hour${i}`);
+        if(hourPlaceHolder !== null)
+            grid.removeChild(hourPlaceHolder);
+    }
+}
+
 function setReservationPositions() {
     let reservations = document.querySelectorAll(".reservation-size");
     reservations.forEach((HTMLDivElement) => {
         let dateContent = HTMLDivElement.innerText.split(" ");
-        let startHour = parseInt(dateContent[0]);
-        let endHour = parseInt(dateContent[1]);
+        let startHour = parseInt(dateContent[0]) + 1;
+        let endHour = parseInt(dateContent[1]) + 1;
         let gridItem = HTMLDivElement.parentElement.parentElement.parentElement;
-        gridItem.setAttribute("style", gridItem.getAttribute("style") + `grid-area: ${startHour + 1}; grid-row: ${startHour + 1}/${endHour + 1};`);
+        let grid = gridItem.parentElement;
+        removeTimePlaceHolders(grid, startHour, endHour);
+        gridItem.setAttribute("style", gridItem.getAttribute("style") + `grid-area: ${startHour}; grid-row: ${startHour}/${endHour};`);
     });
 }
 

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <WebStackScaffolding_ViewDialogWidth>821</WebStackScaffolding_ViewDialogWidth>
     <WebStackScaffolding_IsLayoutPageSelected>True</WebStackScaffolding_IsLayoutPageSelected>
-    <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
+    <WebStackScaffolding_IsPartialViewSelected>True</WebStackScaffolding_IsPartialViewSelected>
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>False</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <NameOfLastUsedPublishProfile>DSUSoundProduction - Web Deploy</NameOfLastUsedPublishProfile>
     <_SelectedScaffolderID>IdentityScaffolder</_SelectedScaffolderID>

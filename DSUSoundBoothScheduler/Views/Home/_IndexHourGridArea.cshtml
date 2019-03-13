@@ -1,0 +1,57 @@
+﻿@model DateTime
+@if (User.HasClaim("IsCertified", "True"))
+{
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(0).Ticks class="btn reservation-cell" id="hour1" style="grid-area:1">12 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(1).Ticks class="btn reservation-cell" id="hour2" style="grid-area:2">1 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(2).Ticks class="btn reservation-cell" id="hour3" style="grid-area:3">2 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(3).Ticks class="btn reservation-cell" id="hour4" style="grid-area:4">3 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(4).Ticks class="btn reservation-cell" id="hour5" style="grid-area:5">4 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(5).Ticks class="btn reservation-cell" id="hour6" style="grid-area:6">5 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(6).Ticks class="btn reservation-cell" id="hour7" style="grid-area:7">6 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(7).Ticks class="btn reservation-cell" id="hour8" style="grid-area:8">7 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(8).Ticks class="btn reservation-cell" id="hour9" style="grid-area:9">8 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(9).Ticks class="btn reservation-cell" id="hour10" style="grid-area:10">9 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(10).Ticks class="btn reservation-cell" id="hour11" style="grid-area:11">10 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(11).Ticks class="btn reservation-cell" id="hour12" style="grid-area:12">11 AM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(12).Ticks class="btn reservation-cell" id="hour13" style="grid-area:13">12 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(13).Ticks class="btn reservation-cell" id="hour14" style="grid-area:14">1 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(14).Ticks class="btn reservation-cell" id="hour15" style="grid-area:15">2 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(15).Ticks class="btn reservation-cell" id="hour16" style="grid-area:16">3 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(16).Ticks class="btn reservation-cell" id="hour17" style="grid-area:17">4 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(17).Ticks class="btn reservation-cell" id="hour18" style="grid-area:18">5 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(18).Ticks class="btn reservation-cell" id="hour19" style="grid-area:19">6 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(19).Ticks class="btn reservation-cell" id="hour20" style="grid-area:20">7 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(20).Ticks class="btn reservation-cell" id="hour21" style="grid-area:21">8 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(21).Ticks class="btn reservation-cell" id="hour22" style="grid-area:22">9 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(22).Ticks class="btn reservation-cell" id="hour23" style="grid-area:23">10 PM</a>
+    <a asp-action="AddReservationForWeekday" asp-route-ticks=@Model.Date.AddHours(23).Ticks class="btn reservation-cell" id="hour24" style="grid-area:24">11 PM</a>
+
+}
+else
+{
+    <div class="reservation-cell" id="hour1" style="grid-area:1">12 AM</div>
+    <div class="reservation-cell" id="hour2" style="grid-area:2">1 AM</div>
+    <div class="reservation-cell" id="hour3" style="grid-area:3">2 AM</div>
+    <div class="reservation-cell" id="hour4" style="grid-area:4">3 AM</div>
+    <div class="reservation-cell" id="hour5" style="grid-area:5">4 AM</div>
+    <div class="reservation-cell" id="hour6" style="grid-area:6">5 AM</div>
+    <div class="reservation-cell" id="hour7" style="grid-area:7">6 AM</div>
+    <div class="reservation-cell" id="hour8" style="grid-area:8">7 AM</div>
+    <div class="reservation-cell" id="hour9" style="grid-area:9">8 AM</div>
+    <div class="reservation-cell" id="hour10" style="grid-area:10">9 AM</div>
+    <div class="reservation-cell" id="hour11" style="grid-area:11">10 AM</div>
+    <div class="reservation-cell" id="hour12" style="grid-area:12">11 AM</div>
+    <div class="reservation-cell" id="hour13" style="grid-area:13">12 PM</div>
+    <div class="reservation-cell" id="hour14" style="grid-area:14">1 PM</div>
+    <div class="reservation-cell" id="hour15" style="grid-area:15">2 PM</div>
+    <div class="reservation-cell" id="hour16" style="grid-area:16">3 PM</div>
+    <div class="reservation-cell" id="hour17" style="grid-area:17">4 PM</div>
+    <div class="reservation-cell" id="hour18" style="grid-area:18">5 PM</div>
+    <div class="reservation-cell" id="hour19" style="grid-area:19">6 PM</div>
+    <div class="reservation-cell" id="hour20" style="grid-area:20">7 PM</div>
+    <div class="reservation-cell" id="hour21" style="grid-area:21">8 PM</div>
+    <div class="reservation-cell" id="hour22" style="grid-area:22">9 PM</div>
+    <div class="reservation-cell" id="hour23" style="grid-area:23">10 PM</div>
+    <div class="reservation-cell" id="hour24" style="grid-area:24">11 PM</div>
+
+}

@@ -1,24 +1,30 @@
-﻿#main-nav {
-    background: rgb(200, 200, 200);
+﻿* {
+    --dsu-white: rgb(234, 234, 234);
+    --dsu-lightestgrey: rgb(212,212,212);
+    --dsu-lightgrey: rgb(200,200,200);
+    --dsu-grey: rgb(100,100,100);
+}
+
+#main-nav {
+    background: var(--dsu-grey);
     border: none;
-    box-shadow: rgb(130, 130, 130) 0px 5px 5px;
+    box-shadow: rgb(130, 130, 130) 0px 3px 3px;
 }
 
     #main-nav .navbar-brand, #main-nav .navbar-items > li > a {
-        color: rgb(20,20,20) !important;
+        color: var(--dsu-white) !important;
     }
 
         #main-nav .navbar-brand:hover {
-            color: rgb(100,100,100) !important;
+            color: var(--dsu-white) !important;
         }
 
         #main-nav .navbar-items > li > a:hover {
-            color: rgb(100,100,100) !important;
+            color: var(--dsu-white) !important;
         }
 
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background: rgb(230, 230, 230);
 }

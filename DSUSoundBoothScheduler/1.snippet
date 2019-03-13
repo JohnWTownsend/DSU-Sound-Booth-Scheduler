@@ -1,0 +1,22 @@
+﻿<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>ul-div</Title>
+    <Author>Microsoft Corporation</Author>
+    <Shortcut>ul>li</Shortcut>
+    <Description>Specific Wrap 1 time use</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+      <SnippetType>SurroundsWith</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>selected</ID>
+        <ToolTip>content</ToolTip>
+        <Default>content</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="html"><![CDATA[<a asp-action="AddReservationForWeekday" asp-route-ticks=@{ Model.Date.AddHours()} class="btn addReservationButton">$selected$</a>$end$]]></Code>
+  </Snippet>
+</CodeSnippet>

@@ -1,3 +1,3 @@
 .nav.navbar-nav.navbar-right li a, .nav.navbar-nav.navbar-right li button {
-    color: black;
+    color: var(--dsu-white);
 }
