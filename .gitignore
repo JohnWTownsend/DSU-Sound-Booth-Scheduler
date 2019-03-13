@@ -3,3 +3,7 @@
 
 .vs/*
 *.ide
+.vs/DSUSoundBoothScheduler/v15/Server/sqlite3/storage.ide-wal
+.vs/DSUSoundBoothScheduler/v15/Server/sqlite3/storage.ide-shm
+.vs/DSUSoundBoothScheduler/v15/Server/sqlite3/storage.ide
+.vs/DSUSoundBoothScheduler/v15/.suo
