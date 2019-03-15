@@ -1,5 +1,6 @@
 ﻿@model WeeklySchedule
 @using Microsoft.AspNetCore.Authorization
+@using System.Drawing
 @inject IAuthorizationService AuthorizationService
 @{
     ViewData["Title"] = "Home Page";
@@ -20,17 +21,30 @@
     <div id="schedule">
         @foreach (var weekDaySchedule in Model.WeekdaySchedule)
         {
+
             <div class="weekDay" id="dayofweek-@weekDaySchedule.Key.DayOfWeek">
                 <h4>
                     @weekDaySchedule.Key.DayOfWeek.ToString().Substring(0, 3) <br />
                     @weekDaySchedule.Key.Month/@weekDaySchedule.Key.Day
                 </h4>
+
                 <div class="reservations">
-                    <partial name="_IndexHourGridArea.cshtml" model="weekDaySchedule.Key"/>
+                    <partial name="_IndexHourGridArea.cshtml" model="weekDaySchedule.Key" />
                     @foreach (Reservation reservation in weekDaySchedule.Value)
                     {
+                        ColorConverter colorConverter = new ColorConverter();
+                        Color color = (Color)colorConverter.ConvertFromString(reservation.Color);
+
+                        if ((color.R * 0.299 + color.G * 0.587 + color.B * 0.114) > 150)
+                        {
+                            ViewData["BlackText"] = "True";
+                        }
+                        else
+                        {
+                            ViewData["BlackText"] = "False";
+                        }
                         r1 = reservation;
-                        if (r1.ReservingUser.Id == ViewBag.UserId || User.HasClaim("IsAdmin","True"))
+                        if (r1.ReservingUser.Id == ViewBag.UserId || User.HasClaim("IsAdmin", "True"))
                         {
                             <a asp-action="EditReservation" asp-route-reservationId=@reservation.Id>
                                 <div class="reservation">
@@ -39,6 +53,7 @@
                                         <p class="reservation-name">@reservation.Name</p>
                                         <div class="reservation-time">@reservation.Start.ToString("%h:mm")-@reservation.End.ToString("%h:mmtt")</div>
                                         <div class="reservation-color" hidden>@reservation.Color</div>
+                                        <div class="reservation-text-color" hidden>@ViewData["BlackText"]</div>
                                         <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
                                     </div>
                                 </div>
@@ -53,6 +68,7 @@
                                         <p class="reservation-name">@reservation.Name</p>
                                         <div class="reservation-time">@reservation.Start.ToString("%h:mm")-@reservation.End.ToString("%h:mmtt")</div>
                                         <div class="reservation-color" hidden>@reservation.Color</div>
+                                        <div class="reservation-text-color" hidden>@ViewData["BlackText"]</div>
                                         <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
                                     </div>
                                 </div>
@@ -95,6 +111,17 @@
                         <div class="reservations">
                             @foreach (var reservation in weekDaySchedule.Value)
                             {
+                                ColorConverter colorConverter = new ColorConverter();
+                                Color color = (Color)colorConverter.ConvertFromString(reservation.Color);
+
+                                if ((color.R * 0.299 + color.G * 0.587 + color.B * 0.114) > 150)
+                                {
+                                    ViewData["BlackText"] = "True";
+                                }
+                                else
+                                {
+                                    ViewData["BlackText"] = "False";
+                                }
                                 r1 = reservation;
                                 if (r1.ReservingUser.Id == ViewBag.UserId)
                                 {
@@ -106,6 +133,7 @@
                                                 <div class="reservation-details">@reservation.Details</div>
                                                 <div class="reservation-time">@reservation.Start.ToShortTimeString() - @reservation.End.ToShortTimeString()</div>
                                                 <div class="reservation-color" hidden>@reservation.Color</div>
+                                                <div class="reservation-text-color" hidden>@ViewData["BlackText"]</div>
                                                 <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
                                             </div>
                                         </div>
@@ -121,6 +149,7 @@
                                                 <div class="reservation-details">@reservation.Details</div>
                                                 <div class="reservation-time">@reservation.Start.ToShortTimeString() - @reservation.End.ToShortTimeString()</div>
                                                 <div class="reservation-color" hidden>@reservation.Color</div>
+                                                <div class="reservation-text-color" hidden>@ViewData["BlackText"]</div>
                                                 <div class="reservation-size" hidden>@reservation.Start.Hour @reservation.End.Hour</div>
                                             </div>
                                         </div>

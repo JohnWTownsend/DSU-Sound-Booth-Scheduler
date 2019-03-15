@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setHeaderPositions();
     addModalPopupsToHeaders();
     setReservationPositions();
+    setReservationTextColors();
 });
 
 function showHideTimes() {
@@ -105,6 +106,15 @@ function setReservationPositions() {
         let grid = gridItem.parentElement;
         removeTimePlaceHolders(grid, startHour, endHour);
         gridItem.setAttribute("style", gridItem.getAttribute("style") + `grid-area: ${startHour}; grid-row: ${startHour}/${endHour};`);
+    });
+}
+
+function setReservationTextColors() {
+    let reservations = document.querySelectorAll(".reservation-text-color");
+    reservations.forEach((HTMLDivElement) => {
+        let blackText = HTMLDivElement.innerText === "True";
+        let gridItem = HTMLDivElement.parentElement.parentElement.parentElement;
+        gridItem.setAttribute("style", gridItem.getAttribute("style") + (blackText ? `color: var(--dsu-darkgrey);`: `color: white;`));
     });
 }
 

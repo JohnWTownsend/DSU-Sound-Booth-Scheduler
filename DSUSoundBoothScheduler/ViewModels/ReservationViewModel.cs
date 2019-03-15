@@ -31,5 +31,7 @@ namespace DSUSoundBoothScheduler.ViewModels
 
         [DisplayName("Color")]
         public string Color { get; set; }
+
+        public bool BlackText { get; set; }
     }
 }

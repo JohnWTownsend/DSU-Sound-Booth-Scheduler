@@ -11,6 +11,7 @@ using DSUSoundBoothScheduler.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Services.Services;
 using Microsoft.AspNetCore.Authorization;
+using System.Drawing;
 
 namespace DSUSoundBoothScheduler.Controllers
 {
@@ -130,6 +131,7 @@ namespace DSUSoundBoothScheduler.Controllers
         {
             var reservation = _reservationService.GetReservationById(reservationId);
             var reserver = _userService.GetUserById(reservation.ReservingUserId);
+            
             ReservationViewModel reservationViewModel = new ReservationViewModel
             {
                 Id = reservation.Id,
@@ -148,6 +150,7 @@ namespace DSUSoundBoothScheduler.Controllers
         [HttpPost]
         public ActionResult EditReservation(ReservationViewModel reservationViewModel)
         {
+            
             var reservation = new Reservation
             {
                 ReservingUserId = reservationViewModel.ReservingUserId,

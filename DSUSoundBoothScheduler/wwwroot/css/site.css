@@ -3,24 +3,29 @@
     --dsu-lightestgrey: rgb(212,212,212);
     --dsu-lightgrey: rgb(200,200,200);
     --dsu-grey: rgb(100,100,100);
+    --dsu-darkgrey: rgb(50,50,50);
+    --dsu-blue: #0054a4;
+    --dsu-lightblue: #247dd1;
+    --dsu-yellow: #fff200;
 }
 
 #main-nav {
-    background: var(--dsu-grey);
+    background: var(--dsu-lightestgrey);
     border: none;
     box-shadow: rgb(130, 130, 130) 0px 3px 3px;
 }
 
     #main-nav .navbar-brand, #main-nav .navbar-items > li > a {
-        color: var(--dsu-white) !important;
+        color: var(--dsu-lightblue) !important;
     }
 
         #main-nav .navbar-brand:hover {
-            color: var(--dsu-white) !important;
+            color: var(--dsu-lightestgrey) !important;
+            background: var(--dsu-lightblue)
         }
 
         #main-nav .navbar-items > li > a:hover {
-            color: var(--dsu-white) !important;
+            color: var(--dsu-blue) !important;
         }
 
 body {

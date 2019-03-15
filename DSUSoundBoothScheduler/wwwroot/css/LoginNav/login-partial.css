@@ -1,3 +1,11 @@
 .nav.navbar-nav.navbar-right li a, .nav.navbar-nav.navbar-right li button {
-    color: var(--dsu-white);
+    color: var(--dsu-lightblue);
+    margin: 0px;
+    padding: 15px;
+    border: none;
+    text-decoration: none;
+}
+.nav.navbar-nav.navbar-right li a:hover, .nav.navbar-nav.navbar-right li button:hover {
+    background: var(--dsu-lightblue);
+    color: var(--dsu-lightestgrey);
 }
